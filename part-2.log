@@ -1,0 +1,192 @@
+# wxPython
+# wxPython - это кросс-платформенный GUI-фреймворк для Python.
+import wx
+
+# Создаем новое приложение
+app = wx.App()
+
+# Создаем фрейм
+frame = wx.Frame(None, title="wxPython Учебник")
+
+# Создаем панель
+panel = wx.Panel(frame)
+
+# Создаем кнопку
+button = wx.Button(panel, label="Нажми меня", pos=(50, 50))
+
+# Показываем фрейм
+frame.Show()
+
+# Запускаем приложение
+app.MainLoop()
+
+# PyGObject
+# PyGObject is a Python package which provides bindings for GObject based libraries such as GTK+.
+import gi
+gi.require_version('Gtk', '3.0')
+from gi.repository import Gtk
+
+# Create a new window
+window = Gtk.Window()
+
+# Set the window title
+window.set_title("PyGObject Учебник")
+
+# Create a label
+label = Gtk.Label("Hello, World")
+
+# Add the label to the window
+window.add(label)
+
+# Show the window
+window.show_all()
+
+# Gtk.main() starts the GTK+ main loop
+Gtk.main()
+
+# Pmw
+# Pmw is a Python GUI toolkit for Tkinter.
+import Pmw
+
+# Create a new app
+app = Pmw.initialise()
+
+# Create a frame
+frame = Pmw.MFrame(app.root, title="Pmw Учебник")
+frame.pack()
+
+# Create a button
+button = Pmw.Button(frame, text="Нажми меня", command=lambda: print("Button pressed"))
+button.pack()
+
+# WCK
+# WCK is a Python GUI toolkit for Tkinter.
+import WCK
+
+# Create a new app
+app = WCK.App()
+
+# Create a frame
+frame = WCK.Frame(app)
+frame.pack()
+
+# Create a button
+button = WCK.Button(frame, text="Нажми меня", command=lambda: print("Button pressed"))
+button.pack()
+
+# Tix
+# Tix is a Python GUI toolkit for Tkinter.
+import tkinter as tk
+from tkinter import tix
+
+# Create a new app
+root = tk.Tk()
+
+# Create a frame
+frame = tix.Frame(root)
+frame.pack()
+
+# Create a button
+button = tix.Button(frame, text="Нажми меня", command=lambda: print("Button pressed"))
+button.pack()
+
+# MySQLdb
+# MySQLdb is a Python interface to the popular MySQL database.
+import MySQLdb
+
+# Connect to the database
+db = MySQLdb.connect(host="localhost", user="root", passwd="password", db="mydb")
+
+# Create a cursor
+cursor = db.cursor()
+
+# Execute a query
+cursor.execute("SELECT * FROM mytable")
+
+# Fetch the results
+results = cursor.fetchall()
+
+# Print the results
+for row in results:
+    print(row)
+
+# Close the cursor and connection
+cursor.close()
+db.close()
+
+# PyGreSQL
+# PyGreSQL is a Python interface to the PostgreSQL database.
+import pg
+
+# Connect to the database
+db = pg.DB(dbname="mydb", host="localhost", user="root", passwd="password")
+
+# Execute a query
+results = db.query("SELECT * FROM mytable").dictresult()
+
+# Print the results
+for row in results:
+    print(row)
+
+# Close the connection
+db.close()
+
+# Gadfly
+# Gadfly is a Python GUI toolkit for Tkinter.
+import Gadfly
+
+# Create a new app
+app = Gadfly.App()
+
+# Create a frame
+frame = Gadfly.Frame(app)
+frame.pack()
+
+# Create a button
+button = Gadfly.Button(frame, text="Нажми меня", command=lambda: print("Button pressed"))
+button.pack()
+
+# SQLAlchemy
+# SQLAlchemy is a Python SQL toolkit and Object Relational Mapper.
+from sqlalchemy import create_engine, MetaData, Table, Column, Integer, String
+
+# Create a new engine
+engine = create_engine('sqlite:///:memory:', echo=True)
+
+# Create a metadata
+metadata = MetaData()
+
+# Define a table
+users_table = Table('users', metadata,
+    Column('id', Integer, primary_key=True),
+    Column('name', String),
+    Column('fullname', String),
+    Column('password', String)
+)
+
+# Create the table
+metadata.create_all(engine)
+
+# KinterbasDB
+# KinterbasDB is a Python interface to the Interbase database.
+import kinterbasdb
+
+# Connect to the database
+conn = kinterbasdb.connect(dsn='localhost:C:/path/to/database.gdb', user='sysdba', password='masterkey')
+
+# Create a cursor
+cursor = conn.cursor()
+
+# Execute a query
+cursor.execute("SELECT * FROM mytable")
+
+# Fetch the results
+results = cursor.fetchall()
+
+# Print the results
+for row in results:
+    print(row)
+
+# Close the cursor and connection
+cursor.close()
+conn.close()
